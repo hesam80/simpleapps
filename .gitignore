@@ -135,6 +135,7 @@ templates/page-dish.html
 *.db
 *.db3
 *.txt
+!requrements.txt
 *.exe
 *.swp
 *.log
