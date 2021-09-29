@@ -9,8 +9,7 @@ python:
 install:
   - pip install fandogh-cli --upgrade
   - pip install docker
-  - virtualenv venv
-  - source venv/bin/activate
+  - pip install Flask==2.0.1
   
   # command to run tests
 script:
