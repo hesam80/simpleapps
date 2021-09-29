@@ -9,7 +9,7 @@ python:
 install:
   - pip install fandogh-cli --upgrade
   - pip install docker
-  - pip install Flask==2.0.1
+  - pip install Flask==1.1.4
   
   # command to run tests
 script:
