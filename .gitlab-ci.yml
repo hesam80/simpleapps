@@ -1,0 +1,26 @@
+stages:  
+ - push
+ - deploy
+push:  
+    stage: push  
+    image: python:3.9  
+    script:  
+
+        
+        - docker login --username=hesam80 --password=sa13801380
+        - docker build -t simpleapps:v0.4  .
+        - docker ps
+        - docker tag simpleapp:v0.4 hesam80/simpleapps:latest
+        - docker push hesam80/simpleappss:latest
+  only:  
+        - dev
+
+deploy:  
+    stage: deploy  
+    image: python:3.5
+    variables:  
+        COLLECT_ERROR: 1  
+    script:  
+        - pip install fandogh_cli --upgrade
+        - fandogh login --username hesam80 --password sa13801380
+        - fandogh service apply -f simpleapps.yml
