@@ -3,8 +3,6 @@ branches:
   - dev
 language: python
 cache: yarn
-python:
-  - "3.5"
 # command to install dependencies
 install:
   - pip install fandogh-cli --upgrade
