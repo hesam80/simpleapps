@@ -9,7 +9,7 @@ install:
   - pip install docker
 
   
-  # command to run tests
+  # command to run
 script:
   - echo $TRAVIS_COMMIT
   - docker login --username=hesam80 --password=sa13801380

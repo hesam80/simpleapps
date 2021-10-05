@@ -21,6 +21,11 @@ deploy:
     variables:  
         COLLECT_ERROR: 1  
     script:  
-        - pip install fandogh_cli --upgrade
-        - fandogh login --username hesam80 --password sa13801380
-        - fandogh service apply -f simpleapps.yml
+            - echo $TRAVIS_COMMIT
+            - docker login --username=hesam80 --password=sa13801380
+            - docker build -t simpleapps:v0.4 .
+            - docker images
+            - docker tag simpleapps:v0.4 hesam80/simpleappss:latest
+            - docker push hesam80/simpleappss:latest
+            - COLLECT_ERROR=True fandogh login --username hesam80 --password sa13801380
+            - fandogh service apply -f simpleapps.yml
