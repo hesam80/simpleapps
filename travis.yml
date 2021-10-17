@@ -23,4 +23,4 @@ deploy:
     script:  
         - pip install fandogh_cli --upgrade
         - fandogh login --username hesam80 --password sa13801380
-        - fandogh service apply -f simpleapps.yml
+        - fandogh service apply -f simpleapp.yml
