@@ -15,7 +15,7 @@ script:
   - docker login --username=hesam80 --password=sa13801380
   - docker build -t simpleapps:v0.4 .
   - docker images
-  - docker tag simpleapps:v0.4 hesam80/simpleappss:latest
-  - docker push hesam80/simpleappss:latest
+  - docker tag simpleapps:v0.4 hesam80/simpleapps:latest
+  - docker push hesam80/simpleapps:latest
   - COLLECT_ERROR=True fandogh login --username hesam80 --password sa13801380
-  - fandogh service apply -f simpleapp.yml
+  - fandogh service apply -f simpleapps.yml
